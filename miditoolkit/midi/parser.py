@@ -559,20 +559,20 @@ class MidiFile(object):
                         channel=channel, note=note.pitch, velocity=0))
             track = sorted(track, key=functools.cmp_to_key(event_compare))
             
-            memo = 0
-            i = 0
-            while i < len(track):
-                #print(i)
-                #print(len(track))
-                if track[i].type == 'control_change':
-                    tmp = track[i].value
-                    if tmp == memo:
-                        track.pop(i)
-                    else:
-                        memo = track[i].value
-                        i += 1
-                else:
-                    i += 1
+            # memo = 0
+            # i = 0
+            # while i < len(track):
+            #     #print(i)
+            #     #print(len(track))
+            #     if track[i].type == 'control_change':
+            #         tmp = track[i].value
+            #         if tmp == memo:
+            #             track.pop(i)
+            #         else:
+            #             memo = track[i].value
+            #             i += 1
+            #     else:
+            #         i += 1
                 
             
             #i = 0
