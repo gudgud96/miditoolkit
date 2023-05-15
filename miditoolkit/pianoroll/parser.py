@@ -42,6 +42,8 @@ def notes2pianoroll(
         for note in note_stream:
             note.start = int(resample_method(note.start * resample_factor))
             note.end = int(resample_method(note.end * resample_factor))
+            if note.end >= max_tick:
+                max_tick = note.end + 1
     
     # create pianoroll
     time_coo = []
